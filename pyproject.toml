@@ -1,0 +1,25 @@
+[project]
+name = "ai-memory"
+version = "0.1.0"
+description = "AI-powered conversational memory engine backed by PostgreSQL + pgvector"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "pgvector>=0.5.1",
+    "psycopg[binary]>=3.3.8",
+    "pydantic>=2.14.3",
+    "python-dotenv>=1.2.4",
+    "sentence-transformers>=6.2.0",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["memory"]
+
+[dependency-groups]
+dev = [
+    "pytest>=9.2.0",
+]
